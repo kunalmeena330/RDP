@@ -8,10 +8,9 @@ jobs:
     timeout-minutes: 360
 
     steps:
-    - name: Set Password
+    - name: Enable RDP
       run: |
         net user runneradmin MyPass@123
-        net localgroup administrators runneradmin /add
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -Name "fDenyTSConnections" -Value 0
         Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
 
@@ -22,5 +21,5 @@ jobs:
 
     - name: Start Ngrok
       run: |
-        .\ngrok.exe authtoken 3AEdM34DO0L8msMz8xLyYZWXhpT_3JCDrPWjnfC3icZEQsZeK
+        .\ngrok.exe authtoken 3AEeKFuwjf1SI2iRFQZ15vz60nn_fwL3UAxYpNhVe9JANSCo
         .\ngrok.exe tcp 3389
