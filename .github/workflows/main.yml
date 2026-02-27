@@ -22,5 +22,5 @@ jobs:
 
     - name: Start Ngrok
       run: |
-        .\ngrok.exe authtoken YOUR_NGROK_TOKEN
+        .\ngrok.exe authtoken 3AEdM34DO0L8msMz8xLyYZWXhpT_3JCDrPWjnfC3icZEQsZeK
         .\ngrok.exe tcp 3389
